@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class NewsService {
 	static RestTemplate restTemplate = new RestTemplate();
 	static JSONObject root; 
 	
-	public static Response searchByCategory(String category){
+	public static Response searchByCategory(String category)  throws ParseException, IOException{
 		
 		//System.out.println(apiKey);
 		
@@ -101,7 +103,7 @@ public class NewsService {
 			  return response;
 	}
 	
-	public static Response searchByDate(String startDate, String endDate){
+	public static Response searchByDate(String startDate, String endDate)  throws ParseException, IOException{
 		
 		String urlString = "https://newsapi.org/v2/everything?q=a&from" + startDate +
 				 "&to=" +endDate + "&apiKey=" +apiKey;
