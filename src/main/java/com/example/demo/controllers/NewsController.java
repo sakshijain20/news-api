@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.io.IOException;
 import java.text.ParseException;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,12 @@ import com.example.demo.services.NewsService;
 
 @RestController
 @RequestMapping("newsapi/")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class NewsController {
 		
 		@GetMapping(value = "Categorizednews/{category}")
 		public Response sendCategorizedNews( @PathVariable String category) throws ParseException, IOException {
+			//System.out.println(category);
 			return NewsService.searchByCategory(category);
 		} 
 		

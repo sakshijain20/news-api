@@ -1,0 +1,56 @@
+body {
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	margin-left: 10%;
+	margin-right: 10%;
+
+}
+
+
+strong,
+.fw-200 {
+	font-weight: 200;
+}
+
+h1 {
+	font-family: "Playfair Display", serif;
+	font-style: italic;	
+	font-size: 3rem;
+	font-weight: 500;
+	color: #1F51FF;
+}
+h2 {
+	font-family: "Playfair Display", serif;
+	font-size: 2rem;
+
+}
+
+.lead {
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+p {
+	font-family: "Playfair Display", serif;
+	font-size: 1.6rem;
+	color: #000000;
+}
+
+.content {
+	font-family: "Playfair Display", serif;
+	font-size: 1.4rem;
+	color:black;
+	font-style: italic;
+}
+
+.button {
+	transition-duration: 0.4s;
+	font-size: 1.4rem;
+	margin: 1% 1%;
+	cursor: pointer;
+  }
+  
+  .button:hover {
+	background-color: #3030306b;
+	color: black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

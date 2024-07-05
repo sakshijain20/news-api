@@ -1,0 +1,57 @@
+<body>
+<div class="overflow-hidden">
+	<div class="container position-relative">
+		<article class="z-index-1 position-relative">
+			<header class="py-2">
+				<a href="/home" class="btn-arrow-left fw-200 text-decoration-none mb-0 d-inline-block content"> All posts</a>
+			</header>
+
+			<div class="article-meta d-flex justify-content-between mb-0">
+				<div id="author" class="center-v">
+					
+						<title id="avatarTitle">  </title>
+                        <h1 class="mb-0" >{{selectedArticle.title}}</h1>
+				
+					<h3 class="fw-240 mb-0" *ngIf="selectedArticle.author">~by {{selectedArticle.author}}</h3>
+				</div>
+
+				<p class="date mb-0 fw-200" data-date-format="DD MMMM YYYY" >Date Posted: {{selectedArticle.publishedAt}}</p>
+			</div>
+
+			<main>
+				<section class=" justify-content-between mb-2">
+
+					<div class="row row-cols-1 row-cols-md-2 text-body-light">
+						<div class="col">
+							<figure><img class="img-fluid" src={{selectedArticle.urlToImage}} alt="[Image from Source]" style="width:70%;height:20%;margin-left: auto; margin-right: auto; align-items: center;" />
+								
+							</figure>
+						</div>
+					</div>
+				</section>
+				
+
+					<div class="row">
+						<div class="col-md-6">
+
+							<div class="row text-body-light">
+								<div class="col-md-4" *ngIf="selectedArticle.content" >
+									<p>{{selectedArticle.content}}</p>	
+								</div>
+								
+							</div></div>
+
+						
+					</div>
+                    <a href={{selectedArticle.url}} target="_blank">
+                    <button class="button content" >Read more »</button> 
+                </a>
+
+			</main>
+
+		</article>
+
+		
+	</div>
+</div>
+</body>

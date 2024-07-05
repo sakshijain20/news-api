@@ -1,0 +1,46 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<section class="search-sec">
+    <div class="container">
+      <form #searchForm="ngForm"  style="align-items: center;" [formGroup]="searchFormGroup">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-2 p-2">
+                            <select class="form-control search-slt form-group" name="category" 
+                            id="category"
+                            formControlName="category" 
+                            class="form-control">
+                                <option *ngFor="let category of categories" [value]="category.label">{{ category.label }}</option>
+                            </select> 
+                        </div>   
+                        <div class="col-lg-3 col-md-3 col-sm-2 p-2">
+                            <input type="date" class="form-control" name="startDate" id="startDate" formControlName="startDate"/>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-2 p-2">
+                            <input type="date" class="form-control" name="endDate"  id="endDate" max= "" formControlName="endDate" />
+                        </div>   
+                        <div class="col-lg-3 col-md-3 col-sm-2 p-2 form-group"> 
+                            <button type="button" class="btn btn-primary wrn-btn" (click)="checkForParam(searchForm)">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<br><br>
+<div class="center-me"><router-outlet></router-outlet></div> 
+
+
+<div class="row">
+  <div class="card col-md-3 col-sm-6 col-xs-6" style="width: 20rem; height: auto; margin: 2%; padding:2%" *ngFor="let num of response.articles">
+      <div class="card-body">
+        <h5 class="card-title">{{num.title }}</h5>
+        <a  class="card-link" [routerLink]="[ '/view-news',num]">View</a>
+      </div>
+    </div>
+</div>
